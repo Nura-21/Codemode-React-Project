@@ -1,21 +1,17 @@
+import { CourseCard } from "./CourseCard";
+import { activeCourseList, futureCourseList } from './data';
+
 export const Course = () => {
+  console.log(activeCourseList);
   return (
     <section className="page course animate slide">
       <h1 className="course-title">Доступные курсы</h1>
       <section className="course-list">
-        {/* <course-item
-        v-for="(course, courseIndex) of activeCourseList"
-        :key="courseIndex"
-        :course="course"
-      ></course-item> */}
+        {activeCourseList.map((course, ind) => <CourseCard key={ind} course={course} />)}
       </section>
       <h1 className="course-title">Coming soon...</h1>
       <section className="course-list">
-        {/* <course-item
-        v-for="(course, courseIndex) of futureCourseList"
-        :key="courseIndex"
-        :course="course"
-      ></course-item> */}
+      {futureCourseList.map((course, ind) => <CourseCard key={ind} course={course} />)}
       </section>
     </section>
   );

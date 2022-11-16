@@ -1,3 +1,5 @@
+import tengeIcon from '../../assets/landing/icons/tenge.svg';
+
 export const CourseCard = (props) => {
   const toManager = () => {
     window.open("https://t.me/codemodekz", "_blank");
@@ -7,7 +9,7 @@ export const CourseCard = (props) => {
   return (
     <section className="course-card glass">
       <img
-        src={`../../assets/landing/icons/${course.img}`}
+        src={`./assets/courses/${course.img}`}
         alt="Course Image"
         className={`course-card-image ${course.img === 'algo.png' ? "algo" : ""}`}
         draggable="false"
@@ -33,7 +35,7 @@ export const CourseCard = (props) => {
       </p>
       <p className="course-card-price glass">
         <img
-          src="../../assets/landing/icons/tenge.svg"
+          src={tengeIcon}
           alt="Tenge Icon"
           draggable="false"
         />

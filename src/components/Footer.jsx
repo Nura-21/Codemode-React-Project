@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import Logo from "../assets/landing/logo.svg";
 import Telegram from "../assets/landing/icons/telegram.svg";
 import Insta from "../assets/landing/icons/insta.svg";
@@ -5,34 +8,40 @@ import Mail from "../assets/landing/icons/mail.svg";
 import Arrow from "../assets/landing/arrow-up.svg";
 
 export const Footer = () => {
+  const [hasScrool, setHasScroll] = useState(false);
+
   const scrollToTop = () => {
-    console.log("scrool");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  window.addEventListener("scroll", () => {
+    setHasScroll(true);
+    if ((document.documentElement.scrollTop || document.body.scrollTop) === 0) {
+      setHasScroll(false);
+    }
+  });
 
   return (
     <footer className="footer">
       <section className="footer-section">
-        {/* <router-link to="/"> */}
-        <a href="">
+        <NavLink to={"/"}>
           <img
             className="footer-logo"
             src={Logo}
             alt="Logo"
             draggable="false"
-            onClick={scrollToTop}
           />
-        </a>
+        </NavLink>
 
-        {/* </router-link> */}
-
-        <img
-          v-if="hasScroll"
-          className="footer-arrow"
-          src={Arrow}
-          alt="arrow"
-          onClick={scrollToTop}
-          draggable="false"
-        />
+        {hasScrool && (
+          <img
+            className="footer-arrow"
+            src={Arrow}
+            alt="arrow"
+            onClick={scrollToTop}
+            draggable="false"
+          />
+        )}
 
         <nav className="footer-nav">
           <a

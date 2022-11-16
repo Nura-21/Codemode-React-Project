@@ -1,29 +1,29 @@
 import Logo from "../assets/landing/logo.svg";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <header className="header main-gradient">
       <section className="header-section">
-        <NavLink to={"/"}>
+        <Link to="/">
           <img
             className="header-logo"
             src={Logo}
             alt="Logo"
             draggable="false"
           />
-        </NavLink>
+        </Link>
 
         <nav className="header-nav">
-          <NavLink className="header-nav-link" to={"/courses"}>
+          <Link className="header-nav-link" to="/courses">
             Курсы
-          </NavLink>
-          <NavLink className="header-nav-link" to={"/tutors"}>
+          </Link>
+          <Link className="header-nav-link" to="/tutors">
             Преподаватели
-          </NavLink>
-          <NavLink className="header-nav-link" to={"/about"}>
+          </Link>
+          <Link className="header-nav-link" to="/about">
             О нас
-          </NavLink>
+          </Link>
         </nav>
       </section>
     </header>

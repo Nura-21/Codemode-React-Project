@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Logo from "../assets/landing/logo.svg";
 import Telegram from "../assets/landing/icons/telegram.svg";
@@ -24,14 +24,14 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <section className="footer-section">
-        <NavLink to={"/"}>
+        <Link to="/">
           <img
             className="footer-logo"
             src={Logo}
             alt="Logo"
             draggable="false"
           />
-        </NavLink>
+        </Link>
 
         {hasScrool && (
           <img

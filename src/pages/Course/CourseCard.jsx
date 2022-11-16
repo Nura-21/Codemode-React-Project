@@ -12,20 +12,24 @@ export const CourseCard = (props) => {
         className={`course-card-image ${course.img === 'algo.png' ? "algo" : ""}`}
         draggable="false"
       />
-      <p className="course-card-title">${course.title}</p>
+      <p className="course-card-title">{course.title}</p>
       <p className="course-card-tutor">
-        <i v-if="course.hasOneTutor" className="fa-solid fa-user"></i>
-        <i v-else className="fa-solid fa-user-group"></i>
-        ${course.firstTutor}
+        {course.hasOneTutor ? <i className="fa-solid fa-user"></i> : 
+          <i className="fa-solid fa-user-group"></i>
+        }
+        {course.firstTutor}
       </p>
-      <p className="course-card-tutor" v-if="course.hasSecondTutor">
-        <i v-if="course.hasOneTutor" className="fa-solid fa-user"></i>
-        <i v-else className="fa-solid fa-user-group"></i>
-        ${course.secondTutor}
-      </p>
+      {course.hasSecondTutor && 
+        <p className="course-card-tutor">
+          {course.hasOneTutor ? <i className="fa-solid fa-user"></i> : 
+            <i className="fa-solid fa-user-group"></i>
+          }
+          {course.secondTutor}
+        </p>
+      }
       <p className="course-card-time">
         <i className="fa-solid fa-stopwatch"></i>
-        ${course.time}
+        {course.time}
       </p>
       <p className="course-card-price glass">
         <img
@@ -34,7 +38,7 @@ export const CourseCard = (props) => {
           draggable="false"
         />
         {!course.isFuture ?  
-          <span>${course.price} T/мес</span> : 
+          <span>{course.price} T/мес</span> : 
           <span>Nobody knows</span>
         }
       </p>

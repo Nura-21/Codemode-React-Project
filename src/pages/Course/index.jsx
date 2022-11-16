@@ -2,7 +2,6 @@ import { CourseCard } from "./CourseCard";
 import { activeCourseList, futureCourseList } from './data';
 
 export const Course = () => {
-  console.log(activeCourseList);
   return (
     <section className="page course animate slide">
       <h1 className="course-title">Доступные курсы</h1>

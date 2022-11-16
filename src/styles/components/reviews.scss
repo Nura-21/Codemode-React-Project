@@ -1,0 +1,59 @@
+.review {
+  &-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-block {
+    display: flex;
+    flex-direction: row;
+    width: 550px;
+    color: $white;
+    align-items: center;
+    gap: 20px;
+    button {
+      all: unset;
+      font-size: 26px;
+      transition: all 0.2s ease;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+    &-content {
+      color: $white;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border-color: $blue-1;
+      width: 90%;
+      &-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 2px dotted $pink;
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $t768) {
+    margin-bottom: 5vh;
+    &-title {
+      margin-top: 7vh;
+      margin-bottom: 3vh;
+    }
+    &-block {
+      width: 95vw;
+      gap: 10px;
+      button {
+        font-size: 22px;
+      }
+    }
+  }
+  @media screen and (max-width: $m600) {
+  }
+  @media screen and (max-width: $m425) {
+  }
+  @media screen and (max-width: $m375) {
+  }
+}

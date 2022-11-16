@@ -1,0 +1,6 @@
+.about {
+  justify-content: space-between;
+  @media screen and (max-width: $t768) {
+    flex-direction: column;
+  }
+}

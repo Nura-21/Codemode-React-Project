@@ -1,0 +1,105 @@
+.header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-section {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    a {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-logo {
+    width: 195px;
+  }
+  &-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    .router-link-exact-active {
+      padding: 10px;
+      border-bottom: 1px solid $white;
+    }
+    &-link {
+      all: unset;
+      color: $white;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+  @media screen and (max-width: $m600) {
+    padding-left: 24px;
+    padding-right: 24px;
+    &-section {
+      width: 100vw;
+    }
+    &-logo {
+      width: 120px;
+    }
+    &-nav {
+      gap: 26px;
+      .router-link-exact-active {
+        padding: 6px;
+      }
+      &-link {
+        font-size: 16px;
+      }
+    }
+  }
+  @media screen and (max-width: $m425) {
+    padding-left: 10px;
+    padding-right: 10px;
+    &-section {
+      width: 100vw;
+    }
+    &-logo {
+      width: 120px;
+    }
+    &-nav {
+      gap: 20px;
+      .router-link-exact-active {
+        padding: 4px;
+      }
+      &-link {
+        font-size: 14px;
+      }
+    }
+  }
+  @media screen and (max-width: $m375) {
+    &-nav {
+      gap: 14px;
+      .router-link-exact-active {
+        padding: 2px;
+      }
+      &-link {
+        font-size: 13px;
+      }
+    }
+  }
+  @media screen and (max-width: $m320) {
+    &-logo {
+      width: 100px;
+    }
+    &-nav {
+      gap: 10px;
+      &-link {
+        font-size: 12px;
+      }
+    }
+  }
+}

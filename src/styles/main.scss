@@ -1,0 +1,220 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "@fortawesome/fontawesome-free/css/v4-shims.min.css";
+@import "./colors.scss";
+@import "./variables.scss";
+@import "./animation.scss";
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 100;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-ExtraLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 300;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 600;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 700;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 900;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Manrope"),
+    url("../assets/font/webfonts/Manrope-ExtraBold.woff2") format("woff2");
+}
+
+$borderWidth: 3px;
+
+.gradient-border {
+  background: #1d1f20;
+  position: relative;
+  border-radius: $borderWidth;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * $borderWidth);
+  left: calc(-1 * $borderWidth);
+  height: calc(100% + $borderWidth * 2);
+  width: calc(100% + $borderWidth * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: calc(2 * $borderWidth);
+  animation: animatedgradient 100s ease alternate infinite;
+  background-size: 300% 300%;
+  z-index: -1;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  min-height: 90vh;
+  padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-gradient {
+  background: rgb(23, 20, 48);
+  background: -moz-linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  background: linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#171430",endColorstr="#3b337b",GradientType=1);
+}
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 300ms ease-in-out;
+  &:hover {
+    // transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Указываем box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Manrope";
+  color: $white;
+  overflow-x: hidden !important;
+  background: rgb(23, 20, 48);
+  background: -moz-linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  background: linear-gradient(
+    90deg,
+    $dark-blue 0%,
+    $dark-blue-1 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#171430",endColorstr="#3b337b",GradientType=1);
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $dark-blue;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $blue-1;
+  }
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

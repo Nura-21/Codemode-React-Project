@@ -1,3 +1,3 @@
 export const Loader = () => {
-  return <div classNameName="lds-dual-ring"></div>;
+  return <div className="lds-dual-ring"></div>;
 };

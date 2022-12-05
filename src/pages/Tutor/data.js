@@ -1,4 +1,4 @@
-const firstRow = [
+const tutors = [
   {
     img: "zhaks.jpg",
     name: "Ашим Жаксылык",
@@ -18,6 +18,7 @@ const firstRow = [
     ],
     email: "duramash.02@gmail.com",
     telegram: "https://t.me/duramash",
+    row: 0,
   },
   {
     img: "adil.jpg",
@@ -38,6 +39,7 @@ const firstRow = [
     ],
     email: "adilzhapar2002@gmail.com",
     telegram: "https://t.me/zhaparka",
+    row: 0,
   },
   {
     img: "nura.jpg",
@@ -58,19 +60,12 @@ const firstRow = [
     ],
     email: "n.turdalin@arbuz.kz",
     telegram: "https://t.me/trdln",
+    row: 1,
   },
   {
     img: "bauka.jpg",
     name: "Балгазиев Бауыржан",
     courses: [
-      {
-        title: "Принципы программирования - C++",
-        icon: "cpp.svg",
-      },
-      {
-        title: "Принципы программирования - Python",
-        icon: "python.svg",
-      },
       {
         title: "Алгоритмы и структуры данных",
         icon: "algo.png",
@@ -78,13 +73,11 @@ const firstRow = [
     ],
     email: "b.balgaziev03@gmail.com",
     telegram: "https://t.me/bbaaurzhan",
+    row: 1,
   },
-];
-
-const secondRow = [
   {
     img: "rama.jpg",
-    name: "Райымбек Бактыбаев",
+    name: "Бактыбаев Райымбек",
     courses: [
       {
         title: "Принципы программирования - C++",
@@ -96,7 +89,8 @@ const secondRow = [
       },
     ],
     email: "mibuchi773@mail.ru",
-    telegram: "https://t.me/optimusraiym",
+    telegram: "https://t.me/b0napartt",
+    row: 1,
   },
   {
     img: "sanzhik.jpg",
@@ -109,6 +103,24 @@ const secondRow = [
     ],
     email: "sanzhar122002@gmail.com",
     telegram: "https://t.me/Sanzhar_OG",
+    row: 1,
+  },
+  {
+    img: "darina.jpg",
+    name: "Айтбаева Дарина",
+    courses: [
+      {
+        title: "Принципы программирования - C++",
+        icon: "cpp.svg",
+      },
+      {
+        title: "Принципы программирования - Python",
+        icon: "python.svg",
+      },
+    ],
+    email: "dajtbaeva@gmail.com",
+    telegram: "https://t.me/dajtbaeva",
+    row: 2,
   },
   {
     img: "alikh.jpg",
@@ -118,9 +130,14 @@ const secondRow = [
         title: "Принципы программирования - C++",
         icon: "cpp.svg",
       },
+      {
+        title: "Принципы программирования - Python",
+        icon: "python.svg",
+      },
     ],
     email: "jonasofan.gubaev@gmail.com",
     telegram: "https://t.me/akidra4L",
+    row: 2,
   },
   {
     img: "yaslan.jpg",
@@ -130,10 +147,19 @@ const secondRow = [
         title: "Принципы программирования - C++",
         icon: "cpp.svg",
       },
+      {
+        title: "Принципы программирования - Python",
+        icon: "python.svg",
+      },
     ],
     email: "yaslan.ruchanov@mail.ru",
     telegram: "https://t.me/Ruchanov",
+    row: 2,
   },
 ];
 
-export { firstRow, secondRow };
+const firstRow = tutors.filter((i) => i.row === 0);
+const secondRow = tutors.filter((i) => i.row === 1);
+const thirdRow = tutors.filter((i) => i.row === 2);
+
+export { firstRow, secondRow, thirdRow };

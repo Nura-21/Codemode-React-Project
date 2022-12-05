@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
 import { CourseCard } from "./CourseCard";
+import { Loader } from  "../../components/Loader";
 
 export const Course = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   const [courses, setCourses] = useState();
@@ -25,6 +26,14 @@ export const Course = () => {
   useEffect(() => {
     fetchCourses();
   }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <p>Error happened</p>;
+  }
 
   return (
     <section className="page course animate slide">

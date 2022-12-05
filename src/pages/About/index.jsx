@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { reviewsList } from './data';
+import { useState, useEffect } from "react";
 
 import Telegram from "../../assets/landing/icons/telegram.svg";
 import Insta from "../../assets/landing/icons/insta.svg";
+import api from "../../api";
 
 export const About = () => {
+  const [reviewsList, setReviewsList] = useState([]);
   const [currentReview, setCurrentReview] = useState(0);
+  const [isLoading, setLoading] = useState(true);
 
   const slideNext = () => {
     setCurrentReview((currentReview + 1) % reviewsList.length);
@@ -19,7 +21,27 @@ export const About = () => {
     }
   };
 
-  return (
+  const initPage = async () => {
+    setLoading(true);
+    try {
+      const reviews = await api.getReviews();
+      if (reviews) {
+        setReviewsList(reviews);
+      } else {
+        setLoading(true);
+        return;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    initPage();
+  }, []);
+
+  return isLoading === false ? (
     <section className="page about animate">
       <section className="page-contact">
         <div className="contact-block">
@@ -77,5 +99,7 @@ export const About = () => {
         </div>
       </section>
     </section>
+  ) : (
+    <h3>Загрузка</h3>
   );
 };

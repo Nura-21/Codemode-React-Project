@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 
-import { HomePage } from "../pages/Main";
-import { Course } from "../pages/Course";
-import { Tutor } from "../pages/Tutor";
-import { About } from "../pages/About";
+import { HomePage } from "@/pages/Main";
+import { Course } from "@/pages/Course";
+import { Tutor } from "@/pages/Tutor";
+import { About } from "@/pages/About";
 
 export const RouteList = () => {
   return (

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "../assets/landing/logo.svg";
-import Telegram from "../assets/landing/icons/telegram.svg";
-import Insta from "../assets/landing/icons/insta.svg";
-import Mail from "../assets/landing/icons/mail.svg";
-import Arrow from "../assets/landing/arrow-up.svg";
+import Logo from "@/assets/landing/logo.svg";
+import Telegram from "@/assets/landing/icons/telegram.svg";
+import Insta from "@/assets/landing/icons/insta.svg";
+import Mail from "@/assets/landing/icons/mail.svg";
+import Arrow from "@/assets/landing/arrow-up.svg";
 
 export const Footer = () => {
   const [hasScrool, setHasScroll] = useState(false);

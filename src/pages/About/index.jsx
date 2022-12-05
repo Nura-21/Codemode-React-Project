@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import Telegram from "../../assets/landing/icons/telegram.svg";
-import Insta from "../../assets/landing/icons/insta.svg";
-import api from "../../api";
+import Telegram from "@/assets/landing/icons/telegram.svg";
+import Insta from "@/assets/landing/icons/insta.svg";
+import api from "@/api";
 
 export const About = () => {
   const [reviewsList, setReviewsList] = useState([]);

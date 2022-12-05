@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import bgImg from '../../assets/landing/ide.png';
+import bgImg from '@/assets/landing/ide.png';
 
 export const HomePage = () => {
   const redirectToTelegram = () => window.open("https://t.me/codemodekz", "_blank");

@@ -1,4 +1,4 @@
-import tengeIcon from "../../assets/landing/icons/tenge.svg";
+import tengeIcon from "@/assets/landing/icons/tenge.svg";
 
 export const CourseCard = (props) => {
   const toManager = () => {

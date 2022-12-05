@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { links } from './data';
 
-import Logo from "../../assets/landing/logo.svg";
+import Logo from "@/assets/landing/logo.svg";
 
 export const Header = () => {
   const location = useLocation();

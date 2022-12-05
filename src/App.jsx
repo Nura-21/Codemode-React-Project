@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
-import { RouteList } from "./routes";
-import { Footer, Header } from "./components";
+import { RouteList } from "@/routes";
+import { Footer, Header } from "@/components";
 
 function App() {
   return (

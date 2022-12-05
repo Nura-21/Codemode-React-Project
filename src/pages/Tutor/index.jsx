@@ -1,5 +1,5 @@
 import { TutorCard } from "./TutorCard";
-import api from "../../api";
+import api from "@/api";
 import { useState, useEffect } from "react";
 export const Tutor = () => {
   const [isLoading, setLoading] = useState(true);

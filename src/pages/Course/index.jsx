@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import api from "../../api";
+import api from "@/api";
 import { CourseCard } from "./CourseCard";
-import { Loader } from "../../components/Loader";
+import { Loader } from "@/components/Loader";
 
 export const Course = () => {
   const [isLoading, setIsLoading] = useState(true);

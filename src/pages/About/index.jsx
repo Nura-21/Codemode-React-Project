@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 
+import { Loader } from "@/components/Loader"; 
+import api from "@/api";
 import Telegram from "@/assets/landing/icons/telegram.svg";
 import Insta from "@/assets/landing/icons/insta.svg";
-import api from "@/api";
 
 export const About = () => {
   const [reviewsList, setReviewsList] = useState([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isLoading, setLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const slideNext = () => {
     setCurrentReview((currentReview + 1) % reviewsList.length);
@@ -33,6 +35,7 @@ export const About = () => {
       }
     } catch (err) {
       console.log(err);
+      setIsError(true);
     }
     setLoading(false);
   };
@@ -99,7 +102,9 @@ export const About = () => {
         </div>
       </section>
     </section>
+  ) : isError ? (
+    <div>Error happened</div>
   ) : (
-    <h3>Загрузка</h3>
+    <Loader />
   );
 };

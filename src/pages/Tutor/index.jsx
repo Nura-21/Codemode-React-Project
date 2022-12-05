@@ -1,8 +1,11 @@
-import { TutorCard } from "./TutorCard";
-import api from "@/api";
 import { useState, useEffect } from "react";
+import { TutorCard } from "./TutorCard";
+import { Loader }  from '@/components/Loader';
+import api from "@/api";
+
 export const Tutor = () => {
   const [isLoading, setLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
   const [firstRow, setFirstRow] = useState([]);
   const [secondRow, setSecondRaw] = useState([]);
   const [thirdRow, setThirdRow] = useState([]);
@@ -21,6 +24,7 @@ export const Tutor = () => {
       }
     } catch (err) {
       console.log(err);
+      setIsError(true);
     }
     setLoading(false);
   };
@@ -48,9 +52,9 @@ export const Tutor = () => {
         ))}
       </section>
     </section>
+  ) : isError ? (
+    <div>Error happened</div>
   ) : (
-    <section className="page tutor animate slide">
-      <h1 className="tutor-title">Загрузка</h1>
-    </section>
+    <Loader />
   );
 };
